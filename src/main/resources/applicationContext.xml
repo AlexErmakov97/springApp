@@ -9,7 +9,23 @@
 
     <bean id="testBean"
           class="org.example.TestBean">
-        <constructor-arg value="Alexander"/>
+        <constructor-arg value="Author - Alexander"/>
     </bean>
 
+    <bean id="classicalMusicBean"
+          class="org.example.ClassicalMusic">
+    </bean>
+
+    <bean id="rockMusicBean"
+          class="org.example.RockMusic">
+    </bean>
+
+    <bean id="musicBean"
+          class="org.example.RapMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class="org.example.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
 </beans>
