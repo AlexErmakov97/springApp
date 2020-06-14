@@ -9,15 +9,9 @@ public class SpringApp {
                 "applicationContext.xml"
         );
 
-        TestBean testBean = context.getBean("testBean", TestBean.class);
-        System.out.println(testBean.getName());
+        MusicPlayer musicPlayer = context.getBean("musicPlayerList", MusicPlayer.class);
+        musicPlayer.playMusicList();
 
-        Music music = context.getBean("classicalMusicBean", Music.class);
-        MusicPlayer musicPlayer = new MusicPlayer(music);
-        musicPlayer.playMusic();
-
-        MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer1.playMusic();
 
         context.close();
     }

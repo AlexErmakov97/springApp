@@ -7,25 +7,24 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="org.example.TestBean">
-        <constructor-arg value="Author - Alexander"/>
-    </bean>
-
-    <bean id="classicalMusicBean"
-          class="org.example.ClassicalMusic">
-    </bean>
+    <bean id="rapMusicBean"
+          class="org.example.RapMusic"/>
 
     <bean id="rockMusicBean"
-          class="org.example.RockMusic">
-    </bean>
+          class="org.example.RockMusic"/>
 
-    <bean id="musicBean"
-          class="org.example.RapMusic">
-    </bean>
+    <bean id="classicMusicBean"
+          class="org.example.ClassicalMusic"/>
 
-    <bean id="musicPlayer"
+
+    <bean id="musicPlayerList"
           class="org.example.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <property name="musicList">
+            <list>
+                <ref bean="rockMusicBean"/>
+                <ref bean="classicMusicBean"/>
+                <ref bean="rapMusicBean"/>
+            </list>
+        </property>
     </bean>
 </beans>
