@@ -9,8 +9,8 @@ public class SpringApp {
                 "applicationContext.xml"
         );
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayerList", MusicPlayer.class);
-        musicPlayer.playMusicList();
+        RockMusic rockMusic = context.getBean("rockMusic", RockMusic.class);
+        System.out.println(rockMusic.getSong());
 
 
         context.close();
